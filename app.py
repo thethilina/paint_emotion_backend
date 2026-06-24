@@ -7,9 +7,6 @@ app = FastAPI()
 def root():
     return {"status": "ML server running"}
 
-# -----------------------
-# IMAGE EMOTION ENDPOINT
-# -----------------------
 @app.post("/emotion/image")
 async def image_emotion(file: UploadFile = File(...)):
     image_bytes = await file.read()

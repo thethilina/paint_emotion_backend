@@ -1,9 +1,11 @@
 from fastapi import FastAPI, UploadFile, File
-
 from services.image_emotion import predict_image_emotion
 
-
 app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"status": "ML server running"}
 
 # -----------------------
 # IMAGE EMOTION ENDPOINT
